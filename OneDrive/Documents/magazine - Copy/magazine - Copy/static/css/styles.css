@@ -1,0 +1,423 @@
+body { 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;              
+    height: auto;           
+    background-color:#042756; /* Dark blue background */
+    
+    background-size: 50px 50px; /* Adjust the size of the pattern */
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f1f7f9;
+}
+.heading {
+  font-size: 4rem;
+  text-align: left;
+  margin: 0;
+  padding: 10px 0;
+}
+.box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-left: -20px;
+}
+
+.small-box {
+  width: auto;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  display:inline-block;
+  cursor: pointer;
+  margin-left: -5px ;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #0a61c9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.small-box:hover .dropdown-content {
+  display: block;
+}
+.small-box a{ color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 20px;}
+.image-section {
+  display: flex;
+  margin: 20px auto;
+  width: 80%;
+  
+  justify-content: space-around;
+  align-items: center;
+}
+.small-images {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.small-image {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.bordered-box {
+  border: 2px solid white; /* White border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px; /* Increase width of the bordered box */
+  height: 150px; /* Increase height of the bordered box */
+  overflow: hidden; /* Hide overflow if necessary */
+  position: relative; /* To position images inside */
+  margin-bottom: 10px; /* Space below the bordered box */
+}
+
+.bordered-box img {
+  width: 100%; /* Make the image fill the box */
+  height: 100%; /* Make the image fill the box */
+  object-fit: cover; /* Ensure the image covers the entire area */
+  position: absolute; /* Positioning inside the box */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+
+/* Hide images initially */
+.hidden {
+  opacity: 0;
+}
+.large-image {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  border: 10px solid #f1f7f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease, transform 0.3s ease; 
+}
+.large-image:hover {
+  border-color: black; /* Change to a different color on hover */
+  transform: scale(1.05); /* Slightly scale up the image */
+}
+.landscape-image {
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+  border-radius: 20px;
+}
+/* Full-width photograph section with centered content */
+/* Full-width photograph section with seamless merging */
+.photograph-of-the-month {
+  width: 700px; /* Full width */
+  height: 350px; /* Adjust height as needed */
+  background-image: url('images/twmp.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.photograph-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.photograph-content h2 {
+  font-size: 3rem; /* Adjust as needed */
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Adding a gradient fade for seamless merging */
+.photograph-of-the-month::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Fade height */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #f9f9f9 100%);
+}
+
+/* Centered content within the photograph with an improved heading */
+
+.container-box {
+  border: 2px solid #ddd;
+  padding: 20px; /* Use a fixed value for consistent spacing */
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  margin: auto; /* Centers the container */
+  max-width: 800px;
+  text-align: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding-top: 20px;
+  flex-wrap: wrap; 
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .photograph-of-the-month {
+    height: 250px;
+  }
+
+  .photograph-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .container-box {
+    padding: 40px 10px;
+  }
+}
+
+
+
+.shape, .shape_orange-1 {
+  width: 150px; /* Adjust width as needed */
+  height: auto;
+  display: block;
+}
+
+
+/* Style for the Cloud shape */
+.shape {
+  position: absolute; /* Positioning the element absolutely */
+  top: 10px; /* Align to the top */
+  left: -100px; /* Align to the extreme left */
+  right:100%;
+  transform: translateY(-50%) rotateZ(-5deg); /* Center vertically and apply initial rotation */
+  width: 400px; /* Width of the shape */
+  height: 400px; /* Height of the shape */
+  will-change: transform; /* Optimization for animations */
+  z-index: -1; /* Ensure it's behind other content */
+  transition: transform 0.9s ease-out; /* Smooth transition for hover effect */
+}
+
+/* Optional: Style for hover effect on the shape */
+.shape:hover {
+  transform: scale(1.05) rotateZ(10deg); /* Slight scaling and rotation on hover */
+}
+
+/* Style for the orange shape */
+.shape_orange-1 {
+  position: fixed; /* Keep the shape fixed on the viewport */
+  bottom: 10px; /* Adjust the vertical position from the bottom */
+  right: 0px; /* Move further to the right */
+  will-change: transform; /* Optimization for animations */
+  transition: transform 0.1s ease-out; /* Smooth transition */
+  width: 400px; /* Increase size */
+  height: 400px; /* Maintain aspect ratio */
+  z-index: -1; /* Ensure it's behind other content */
+}
+
+
+
+.three-card-section {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  justify-content: center;
+  background-color: #749dc8; /* New background color */
+    padding: 40px 20px; /* Additional padding for visual spacing */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+.card {
+  width: 400px;
+  background-color: #7dbcD0;
+  color: #283f3f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card_top {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  display: block;
+}
+
+.card_content {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.author, .card-text {
+  font-size: 14px;
+  color: #283f3f;
+  margin: 5px 0;
+}
+.card:hover {
+  transform: translateY(-10px); /* Moves card up slightly */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  background-color: #89d4d9; /* Slightly lighter background on hover */
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #7dbcD0;
+  background-color: #283f3f;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.message-by-dean {
+  background-color: #f1f7f9;
+  padding: auto;
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  transition: background-color 0.5s ease-in-out;
+  border: 2px solid #07326a;
+  margin-top: 100px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border-radius:10px 10px 0 0 ;
+  margin-bottom: 0;
+}
+
+.dean-photo {
+  margin-right: 20px;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ddd;
+  background-image: url("images/twmp.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.dean-message {
+  flex-grow: 1; /* Allows the message to take up remaining space */
+}
+
+.message-by-dean h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.message-by-dean p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 10px;
+}
+/* General container for the "About Us" section */
+.about-us {
+ 
+  display: flex; /* Flex layout to align child sections side-by-side */
+  justify-content: space-around; /* Spacing around the items */
+  align-items: flex-start; /* Aligns content to the top */
+  padding: 200px; /* Spacing around the entire section */
+ 
+  background-color: #ff8e2b; /* Light background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+   /* Centering on the page */
+  max-width: 8000px;
+  margin-top: 0 ;
+  
+}
+
+/* Individual sections inside About Us */
+.the-need, .our-mission {
+  flex: 1; /* Each section takes equal space */
+  margin: 10px; /* Spacing between sections */
+}
+
+/* Titles styling */
+.about-us h2 {
+  font-size: 24px; /* Large size for main titles */
+  color: #333; /* Darker color for readability */
+  margin-bottom: 10px; /* Space below the title */
+  border-bottom: 2px solid #ddd; /* Bottom border for emphasis */
+  padding-bottom: 5px; /* Space between text and border */
+}
+
+/* Subtitles styling */
+.about-us h3 {
+  font-size: 20px; /* Slightly smaller than main titles */
+  color: #555; /* Medium dark color for subtitles */
+  margin-bottom: 8px; /* Space below subtitles */
+  font-weight: 600; /* Bold font */
+}
+
+/* Paragraph styling */
+.about-us p {
+  font-size: 16px; /* Base font size for easy reading */
+  color: #666; /* Soft gray for body text */
+  line-height: 1.6; /* Spacing between lines */
+  margin: 10px 0; /* Top and bottom spacing */
+}
+
+/* Add subtle hover effect */
+.about-us div:hover {
+  transform: translateY(-5px); /* Slight upward movement on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+  background-color: #fff; /* White background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+  border-radius: 10px; /* Consistent rounded corners */
+  padding: 15px; /* Added padding for hover state */
+}
+

@@ -1,0 +1,15 @@
+
+            <img src="templates\images\twmp.jpg"/>
+            .dean-photo {
+                margin-right: 20px; /* Space between photo and message */
+              }
+              
+
+              .dean-photo img {
+                width: 100px; /* Adjust the size as needed */
+                height: auto;
+                border-radius: 50%; /* Optional: Makes the image circular */
+                border: 2px solid #ddd; /* Optional: Border around the photo */
+              }
+
+              /* https://cdn.prod.website-files.com/650880e89fe967ec5185e43c/654d5c3ba2e2c9c8d6ce98a3_Cut-Paper%20Textured%20Forms%20Layer%2016.webp */
