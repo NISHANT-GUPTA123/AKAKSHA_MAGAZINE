@@ -1,0 +1,11 @@
+{# 500.html #}
+{% extends "base.html" %}
+
+{% block title %}Server Error - Magazine of FOT{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <h1>500 - Server Error</h1>
+    <p>Something went wrong on our end. Please try again later or return to the <a href="{{ url_for('home') }}">homepage</a>.</p>
+</div>
+{% endblock %}

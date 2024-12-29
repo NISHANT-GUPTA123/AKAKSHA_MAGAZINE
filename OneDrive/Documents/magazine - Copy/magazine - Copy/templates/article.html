@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} - Magazine of FOT{% endblock %}
+
+{% block content %}
+<div class="article-container">
+    <article class="full-article">
+        {% if article.image_url %}
+            <img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-image">
+        {% endif %}
+        
+        <h1 class="article-title">{{ article.title }}</h1>
+        <div class="article-meta">
+            <span class="author">By {{ article.author.username }}</span>
+            <span class="date">{{ article.created_at.strftime('%B %d, %Y') }}</span>
+            <span class="category">{{ article.category }}</span>
+        </div>
+        
+        <div class="article-content">
+            {{ article.content | safe }}
+        </div>
+    </article>
+
+    <section class="comments-section">
+        <h3>Comments</h3>
+        {% if current_user.is_authenticated %}
+            <form method="POST" action="{{ url_for('add_comment', id=article.id) }}" class="comment-form">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.content(class="form-control", placeholder="Add a comment...") }}
+                    {% for error in form.content.errors %}
+                        <span class="error">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <button type="submit" class="button">Post Comment</button>
+            </form>
+        {% endif %}
+
+        <div class="comments-list">
+            {% for comment in comments %}
+                <div class="comment">
+                    <div class="comment-meta">
+                        <span class="comment-author">{{ comment.author.username }}</span>
+                        <span class="comment-date">{{ comment.created_at.strftime('%B %d, %Y') }}</span>
+                    </div>
+                    <div class="comment-content">
+                        {{ comment.content }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
