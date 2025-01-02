@@ -1,0 +1,48 @@
+{# new_article.html #}
+{% extends "base.html" %}
+
+{% block title %}New Article - Magazine of FOT{% endblock %}
+
+{% block content %}
+<div class="new-article-container">
+    <h2>Create New Article</h2>
+    
+    <form method="POST" action="{{ url_for('new_article') }}" enctype="multipart/form-data" class="article-form">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title(class="form-control") }}
+            {% for error in form.title.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.category.label }}
+            {{ form.category(class="form-control") }}
+            {% for error in form.category.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.content.label }}
+            {{ form.content(class="form-control", rows=10) }}
+            {% for error in form.content.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        
+        <div class="form-group">
+            {{ form.image.label }}
+            {{ form.image(class="form-control-file") }}
+            {% for error in form.image.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        
+        <button type="submit" class="button">Publish Article</button>
+    </form>
+</div>
+{% endblock %}

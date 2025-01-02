@@ -1,0 +1,54 @@
+{# search.html #}
+{% extends "base.html" %}
+
+{% block title %}Search Results - Magazine of FOT{% endblock %}
+
+{% block content %}
+<div class="search-results">
+    <h2>Search Results for "{{ query }}"</h2>
+    
+    {% if articles.items %}
+        <div class="articles-grid">
+            {% for article in articles.items %}
+                <div class="article-card">
+                    {% if article.image_url %}
+                        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="article-thumbnail">
+                    {% endif %}
+                    <div class="article-content">
+                        <h3><a href="{{ url_for('article', id=article.id) }}">{{ article.title }}</a></h3>
+                        <div class="article-meta">
+                            <span class="author">By {{ article.author.username }}</span>
+                            <span class="date">{{ article.created_at.strftime('%B %d, %Y') }}</span>
+                            <span class="category">{{ article.category }}</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+        {# Pagination #}
+        {% if articles.pages > 1 %}
+            <div class="pagination">
+                {% if articles.has_prev %}
+                    <a href="{{ url_for('search', q=query, page=articles.prev_num) }}">&laquo; Previous</a>
+                {% endif %}
+                
+                {% for page in articles.iter_pages() %}
+                    {% if page %}
+                        <a href="{{ url_for('search', q=query, page=page) }}" 
+                           class="{{ 'active' if page == articles.page else '' }}">{{ page }}</a>
+                    {% else %}
+                        <span class="ellipsis">...</span>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if articles.has_next %}
+                    <a href="{{ url_for('search', q=query, page=articles.next_num) }}">Next &raquo;</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% else %}
+        <p class="no-results">No articles found matching your search.</p>
+    {% endif %}
+</div>
+{% endblock %}

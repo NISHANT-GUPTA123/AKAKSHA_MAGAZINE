@@ -35,14 +35,14 @@ window.addEventListener('scroll', () => {
 
 // Toggle dropdown menu visibility
 function toggleDropdown() {
-    const menuBox = document.querySelector(".small-box");
+    const menuBox = document.querySelector(".small-box1");
     menuBox.classList.toggle("active"); // Toggle active class for dropdown visibility
 }
 
 // Close the dropdown when clicking outside
 window.onclick = function(event) {
-    if (!event.target.matches('.small-box h3')) {
-        const dropdown = document.querySelector(".small-box");
+    if (!event.target.matches('.small-box1 h3')) {
+        const dropdown = document.querySelector(".small-box1");
         if (dropdown.classList.contains('active')) {
             dropdown.classList.remove('active');
         }
@@ -95,3 +95,50 @@ const swiper = new Swiper('#heroCarousel_01', {
     },
 });
 
+// signup
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+  container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+  container.classList.remove("right-panel-active");
+});
+
+document.getElementById("subscribe-button").addEventListener("click", function() {
+    const email = document.getElementById("email").value;
+    if (email) {
+        alert("Thank you for subscribing with " + email);
+        document.getElementById("email").value = ""; // Clear the input
+    } else {
+        alert("Please enter a valid email address.");
+    }
+});
+
+document.getElementById("privacy-policy").addEventListener("click", function(event) {
+    event.preventDefault();
+    showModal("This is the Privacy Policy content.");
+});
+
+document.getElementById("terms-of-service").addEventListener("click", function(event) {
+    event.preventDefault();
+    showModal("This is the Terms of Service content.");
+});
+
+function showModal(text) {
+    document.getElementById("modal-text").innerText = text;
+    document.getElementById("modal").style.display = "block";
+}
+
+document.querySelector(".close").addEventListener("click", function() {
+    document.getElementById("modal").style.display = "none";
+});
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById("modal")) {
+        document.getElementById("modal").style.display = "none";
+    }
+}

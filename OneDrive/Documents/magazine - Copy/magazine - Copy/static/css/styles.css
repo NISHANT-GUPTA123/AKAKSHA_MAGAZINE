@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Playfair+Display:wght@400;500&display=swap');
 body { 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Cormorant Garamond', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
     margin: 0;              
     height: auto;           
     background-color:#042756; /* Dark blue background */
@@ -32,7 +33,7 @@ body {
   margin-left: -20px;
 }
 
-.small-box {
+.small-box1 {
   width: auto;
   padding: 10px 15px;
   border: 1px solid #ccc;
@@ -62,19 +63,27 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #e6c3c3;
 }
 
-.small-box:hover .dropdown-content {
+.small-box1:hover .dropdown-content {
   display: block;
 }
-.small-box a{ color: inherit;
+
+.small-box1 a{ color: inherit;
   text-decoration: none;
   display: block;
   width: 100%;
   height: 100%;
   padding: 10px;
-  border-radius: 20px;}
+  border-radius: 20px;
+}
+
+.image-gallery {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
 .image-section {
   display: flex;
   margin: 20px auto;
@@ -83,13 +92,7 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.small-images {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
+
 .small-image {
   width: 150px;
   height: auto;
@@ -124,8 +127,9 @@ body {
   opacity: 0;
 }
 .large-image {
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 600px;
+  margin-left: 60px;
   object-fit: cover;
   border: 10px solid #f1f7f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -141,8 +145,6 @@ body {
   width: 90%;
   border-radius: 20px;
 }
-/* Full-width photograph section with centered content */
-/* Full-width photograph section with seamless merging */
 .photograph-of-the-month {
   width: 700px; /* Full width */
   height: 350px; /* Adjust height as needed */
@@ -168,26 +170,17 @@ body {
   color: #ffffff;
 }
 
-/* Adding a gradient fade for seamless merging */
-.photograph-of-the-month::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px; /* Fade height */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #f9f9f9 100%);
-}
-
-/* Centered content within the photograph with an improved heading */
 
 .container-box {
   border: 2px solid #ddd;
   padding: 20px; /* Use a fixed value for consistent spacing */
   border-radius: 10px;
   background-color: #f9f9f9;
-  margin: auto; /* Centers the container */
+  /* margin: auto; Centers the container */
   max-width: 800px;
+  margin-left: 260px;
+  margin-top: 20px;
+  margin-bottom: 31px;
   text-align: center;
 }
 
@@ -314,55 +307,70 @@ body {
   border-radius: 5px;
   text-decoration: none;
   margin-top: 10px;
+}/* Styling for the "Message by the Dean" title */
+.dean-section{
+  width:80%;
+  margin:20px auto;
+  background-color: rgba(255, 255,255,0);
 }
+
 .message-by-dean {
-  background-color: #f1f7f9;
-  padding: auto;
-  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
-  transition: background-color 0.5s ease-in-out;
-  border: 2px solid #07326a;
-  margin-top: 100px;
-  max-width: 100%;
-  margin: 0 auto;
+  font-family: 'Playfair Display', serif;
+    color: #f1f7f9;
+    font-size: 4rem;
+    text-align: left;
+    padding: 10px 0;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.1);
+    
+}
+.content-box {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
   display: flex;
-  align-items: center;
-  border-radius:10px 10px 0 0 ;
-  margin-bottom: 0;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 10px;
 }
-
 .dean-photo {
-  margin-right: 20px;
+  flex-shrink: 0;
 }
-
 .photo-placeholder {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
-  background-color: #ddd;
-  background-image: url("images/twmp.jpg");
+  border-radius: 50%; /* Circular image */
+  background-color: #ddd; /* Placeholder color */
+  background-image: url("images/twmp.jpg"); /* Dean's photo */
+  background-size: cover; /* Cover the placeholder fully */
+  background-position: center; /* Center the image */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
-  color: #333;
-  text-decoration: none; /* Remove underline from link */
 }
 
+/* Styling for the message content */
 .dean-message {
-  flex-grow: 1; /* Allows the message to take up remaining space */
+  flex-grow: 1; /* Make the message section grow to fill space */
 }
 
 .message-by-dean h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
+  font-size: 24px; /* Title font size */
+  color: #333; /* Title color */
+  margin-bottom: 15px; /* Space below the title */
 }
 
 .message-by-dean p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 10px;
+  font-size: 16px; /* Text font size */
+  color: #555; /* Text color */
+  margin-bottom: 10px; 
+  line-height:1.6;/* Space below paragraphs */
 }
+
 /* General container for the "About Us" section */
 .about-us {
  
@@ -376,8 +384,8 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
    /* Centering on the page */
   max-width: 8000px;
-  margin-top: 0 ;
-  
+  margin-top: 10px;
+margin-bottom: 10px;  
 }
 
 /* Individual sections inside About Us */
@@ -421,3 +429,100 @@ body {
   padding: 15px; /* Added padding for hover state */
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  background-color: #FFFDEC;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-section {
+  width: 22%;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+  
+  padding: 0;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+/* Add this to create space between the paragraph and social media icons */
+.footer-section .social-media {
+  margin-top: 10px; /* Adjust this value for desired spacing */
+}
+
+/* For dynamic  */
+
+.large-image {
+  flex: 0 0 60%; /* Fixed width for the large image */
+  position: sticky; /* Make it sticky */
+  top: 0; /* Stick to the top */
+  overflow: hidden; /* Hide overflow */
+}
+
+.large-image img {
+  width: 100%; /* Full width of the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.small-images {
+  width: 40%;
+  flex: 1; /* Take remaining space */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+  display: grid; /* Use grid layout for small images */
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Space between boxes */
+  margin-left: 53%;
+  margin-top: -640px;
+}
+
+.small-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.small-box img {
+  width: 100%; /* Responsive image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.small-box p {
+  margin: 10px 0; /* Space between text and button */
+}
+
+.small-box button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.small-box button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
